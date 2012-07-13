@@ -1,4 +1,8 @@
 Rentalpub::Application.routes.draw do
+  resources :orders
+
+  resources :users
+
   resources :items
 
   # The priority is based upon order of creation:
