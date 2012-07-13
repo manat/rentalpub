@@ -1,0 +1,19 @@
+= form_for @pre_order do |f|
+  -if @pre_order.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@pre_order.errors.count, "error")} prohibited this pre_order from being saved:"
+      %ul
+        - @pre_order.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :number
+    = f.text_field :number
+  .field
+    = f.label :item_id
+    = f.text_field :item_id
+  .field
+    = f.label :user_id
+    = f.number_field :user_id
+  .actions
+    = f.submit 'Save'

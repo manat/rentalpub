@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Number:
+  = @pre_order.number
+%p
+  %b Item:
+  = @pre_order.item_id
+%p
+  %b User:
+  = @pre_order.user_id
+
+= link_to 'Edit', edit_pre_order_path(@pre_order)
+\|
+= link_to 'Back', pre_orders_path

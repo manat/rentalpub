@@ -1,4 +1,6 @@
 Rentalpub::Application.routes.draw do
+  resources :pre_orders
+
   resources :orders
 
   resources :users

@@ -1,0 +1,23 @@
+%h1 Listing pre_orders
+
+%table
+  %tr
+    %th Number
+    %th Item
+    %th User
+    %th
+    %th
+    %th
+
+  - @pre_orders.each do |pre_order|
+    %tr
+      %td= pre_order.number
+      %td= pre_order.item_id
+      %td= pre_order.user_id
+      %td= link_to 'Show', pre_order
+      %td= link_to 'Edit', edit_pre_order_path(pre_order)
+      %td= link_to 'Destroy', pre_order, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Pre order', new_pre_order_path
