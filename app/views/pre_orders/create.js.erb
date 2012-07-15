@@ -1,0 +1,4 @@
+<% publish_to "/pre_orders/new" do %>
+  $('#pre_order').append('<%= j render(@pre_order) %>').show("slow");
+<% end %>
+$("#new_pre_order")[0].reset();

@@ -1,23 +1,19 @@
-%h1 Listing pre_orders
+.page-header
+  %h1 
+    Pre Orders
+    %small Where the orders fighting!
+    %small
+      %a.btn.btn-mini.btn-danger{ :href => "#{pre_orders_path}/1", "data-confirm" => 'Deleting all pre-orders. Are you sure?', "data-method" => :delete, "title" => "(just for testing convenience)" }
+        #i.icon-trash.icon-white
 
-%table
-  %tr
-    %th Number
-    %th Item
-    %th User
-    %th
-    %th
-    %th
+.row
+  .span9
+    %ul.thumbnails#pre_order
+      = render @pre_orders
 
-  - @pre_orders.each do |pre_order|
-    %tr
-      %td= pre_order.number
-      %td= pre_order.item_id
-      %td= pre_order.user_id
-      %td= link_to 'Show', pre_order
-      %td= link_to 'Edit', edit_pre_order_path(pre_order)
-      %td= link_to 'Destroy', pre_order, :confirm => 'Are you sure?', :method => :delete
 
-%br
+.row
+  .span4
+    = render 'form'
 
-= link_to 'New Pre order', new_pre_order_path
+= subscribe_to "/pre_orders/new"
